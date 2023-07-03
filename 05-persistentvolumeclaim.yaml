@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nfs-#{namespace}#-#{env}#-data
+  namespace: #{namespace}#-#{env}#
+spec:
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: #{storage}#
+  selector:
+    matchLabels:
+      name: nfs-#{namespace}#-#{env}#-data
+  volumeMode: Filesystem
+  volumeName: nfs-#{namespace}#-#{env}#-data
