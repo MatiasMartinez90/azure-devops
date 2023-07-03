@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-#{namespace}#-#{env}#-data
+spec:
+  capacity:
+    storage: #{storage}#
+  nfs:
+    server: #{nfs-ip}#
+    path: /#{nfs-path}#/#{namespace}#-#{env}#
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  volumeMode: Filesystem
