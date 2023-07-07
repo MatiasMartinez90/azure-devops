@@ -15,5 +15,5 @@ spec:
         app: nginx-deployment
     spec:
       containers:
-      - image: nginx:1.20
+      - image: 172.17.25.61:5000/matiasmartinez90/azure-devops:latest
         name: nginx
